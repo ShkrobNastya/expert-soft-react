@@ -1,0 +1,16 @@
+{
+  "blogs": [
+    {
+      "title": "My First Blog",
+      "body": "Why do we use it?\nIt is a long established fact that a reader will be distracted. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos ipsa deleniti illum praesentium, soluta veritatis delectus dignissimos laudantium rerum illo, eum placeat repudiandae labore est facilis ea laboriosam nobis sapiente?",
+      "author": "mario",
+      "id": 1
+    },
+    {
+      "title": "Opening party",
+      "body": "Why do we use it?\nIt is a long established fact that a reader will be distracted. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos ipsa deleniti illum praesentium, soluta veritatis delectus dignissimos laudantium rerum illo, eum placeat repudiandae labore est facilis ea laboriosam nobis sapiente?",
+      "author": "yoshi",
+      "id": 2
+    }
+  ]
+}
