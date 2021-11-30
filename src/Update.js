@@ -1,10 +1,14 @@
 import { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useParams, useLocation } from 'react-router-dom';
 
-const Create = () => {
-    const [title, setTitle] = useState('');
-    const [body, setBody] = useState('');
-    const [author, setAuthor] = useState('mario');
+const Update = (props) => {
+    const { id } = useParams();
+    const {query} = useLocation(); 
+    console.log(query);
+    console.log(props);
+    const [title, setTitle] = useState(query.title);
+    const [body, setBody] = useState(query.body);
+    const [author, setAuthor] = useState(query.author);
     const [isPending, setIsPending] = useState(false);
     const history = useHistory();
 
@@ -14,11 +18,11 @@ const Create = () => {
         console.log(blog);
         setIsPending(true);
 
-        fetch('http://localhost:8000/create', {
-            method: "POST",
+        fetch('http://localhost:8000/update/'+ id, {
+            method: 'PUT',
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(blog)
-        }).then((res) => {
+        }).then(() => {
             console.log('new blog added');
             setIsPending(false);
             history.push('/');
@@ -27,7 +31,7 @@ const Create = () => {
 
     return ( 
         <div className="create">
-            <h2>Add a New Blog</h2>
+            <h2>Update a New Blog</h2>
             <form onSubmit={handleSubmit}>
                 <label>Blog title:</label>
                 <input 
@@ -50,11 +54,11 @@ const Create = () => {
                     <option value="mario">mario</option>
                     <option value="yoshi">yoshi</option>
                 </select>
-                { !isPending && <button>Add Blog</button>}
+                { !isPending && <button>Update blog</button>}
                 { isPending && <button disabled>Adding blog...</button>}
             </form>
         </div>
      );
 }
  
-export default Create;
+export default Update;

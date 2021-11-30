@@ -76,6 +76,7 @@
   padding: 8px;
   border-radius: 8px;
   cursor: pointer;
+  margin-right:20px;
 }
 
 /*  create new blog form  */
@@ -113,4 +114,9 @@
   padding: 8px;
   border-radius: 8px;
   cursor: pointer;
+}
+
+.blog-link {
+  color:#fff;
+  text-decoration: none;
 }
